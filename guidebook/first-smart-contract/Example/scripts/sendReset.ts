@@ -1,0 +1,11 @@
+import { Address, toNano } from '@ton/core';
+import { FirstContract } from '../wrappers/FirstContract';
+import { NetworkProvider } from '@ton/blueprint';
+
+const contractAddress = Address.parse('kQBcFcZRColf5i0cZX_uX3eWBr9QlOp1Wb9Xpy8Iwkyo1wAZ');
+
+export async function run(provider: NetworkProvider) {
+    const firstContract = provider.open(new FirstContract(contractAddress));
+    await firstContract.sendReset(provider.sender(), { value: toNano('0.05') });
+    await provider.waitForLastTransaction();
+}
