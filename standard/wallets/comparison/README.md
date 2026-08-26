@@ -12,6 +12,10 @@ This workspace provides a reproducible test harness for benchmarking transaction
 ## Getting Started
 
 1. Install dependencies: `yarn install`
-2. Run the benchmark suite: `yarn test`
+2. Run the benchmark suite: `yarn build && yarn test`
 
-The tests spawn sandbox blockchains locally, so no external network access is required. Results are written to `tests/results/wallet-fee-comparison.md`.
+The tests spawn sandbox blockchains locally, so no external network access is required.
+
+## Comparison table
+
+Results are written to [`tests/results/wallet-fee-comparison.md`](./standard/wallets/comparison/tests/results/wallet-fee-comparison.md).

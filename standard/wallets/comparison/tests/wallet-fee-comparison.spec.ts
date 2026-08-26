@@ -134,8 +134,8 @@ const CONFIG: Config = (() => {
     { key: 'requests', header: 'Requests', alignment: 'right', enabled: true },
     { key: 'totalGas', header: 'Total Gas', alignment: 'right', enabled: true },
     { key: 'gasPerMsg', header: 'Gas/Msg', alignment: 'right', enabled: true },
-    { key: 'totalFee', header: 'Total Fee (TON)', alignment: 'right', enabled: true },
-    { key: 'feePerMsg', header: 'Fee/Msg (TON)', alignment: 'right', enabled: true },
+    { key: 'totalFee', header: 'Total Fee \(GRAM\)', alignment: 'right', enabled: true },
+    { key: 'feePerMsg', header: 'Fee/Msg \(GRAM\)', alignment: 'right', enabled: true },
     { key: 'realTime', header: 'Real Time (s)', alignment: 'right', enabled: true },
     { key: 'theoryTime', header: 'Theory Time (s)', alignment: 'right', enabled: true },
   ];

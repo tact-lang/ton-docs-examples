@@ -121,7 +121,17 @@ export async function printTables(config: PrintTablesConfig) {
 
   if (allResults.length === 0) return;
 
-  const markdownLines: string[] = ['# Wallet Fee Comparison Results', ''];
+  const markdownLines: string[] = [
+    '# Wallet Fee Comparison Results',
+    '',
+    'The following benchmarks compare gas consumption and throughput across different wallet versions when sending multiple messages. These measurements help determine the most cost-effective wallet for specific use cases.',
+    '',
+    'The benchmarks measure the gas consumed by the wallet contract itself, including `fwd_fee` and gas costs. The final transaction fee may vary depending on the destination address and message processing requirements. Each benchmark includes theoretical and real-time measurements: theoretically, messages can be sent every 1-3 seconds when a new block appears, but in practice, messages can be sent every 12-14 seconds due to network conditions and block confirmation times.',
+    '',
+    '> [!CAUTION]',
+    '> Preprocessed Wallet V2 is shown separately because it is a community implementation and not an official TON standard. Users assume all risks when using this wallet implementation. Always verify the contract code and understand the security implications before use.',
+    '',
+  ];
   const numberFormatter = new Intl.NumberFormat('en-US');
   const tonFormatter = new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 9,
@@ -298,8 +308,8 @@ export async function printTables(config: PrintTablesConfig) {
       if (!columns) return;
 
       const columnIndices = {
-        totalFee: columns.findIndex((c) => c.header === 'Total Fee (TON)'),
-        feePerMsg: columns.findIndex((c) => c.header === 'Fee/Msg (TON)'),
+        totalFee: columns.findIndex((c) => c.header === 'Total Fee \(GRAM\)'),
+        feePerMsg: columns.findIndex((c) => c.header === 'Fee/Msg \(GRAM\)'),
       };
 
       if (columnIndices.totalFee >= 0) {
