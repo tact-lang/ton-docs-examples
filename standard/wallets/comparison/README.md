@@ -18,4 +18,4 @@ The tests spawn sandbox blockchains locally, so no external network access is re
 
 ## Comparison table
 
-Results are written to [`tests/results/wallet-fee-comparison.md`](./standard/wallets/comparison/tests/results/wallet-fee-comparison.md).
+Results are written to [`tests/results/wallet-fee-comparison.md`](./tests/results/wallet-fee-comparison.md).
