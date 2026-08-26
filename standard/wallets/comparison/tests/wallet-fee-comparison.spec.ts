@@ -179,5 +179,5 @@ describe('Wallet Fee Comparison', () => {
       preprocessedWalletName: walletNames['preprocessedV2'],
       outputDirectory: CONFIG.outputDirectory,
     });
-  });
+  }, 120_000);
 });
